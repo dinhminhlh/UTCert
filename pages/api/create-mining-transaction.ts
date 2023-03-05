@@ -18,7 +18,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const recipientAddress = req.body.recipientAddress;
+  // const recipientAddress = req.body.recipientAddress;
+  const recipientAddress = 'addr_test1qqm7a8fjcny59y64yawstsd908lcmgu4g6tm65gvke3qa73ka2gm6amddyamqjt2agngj8s8vhzhf5hm6jsgmw5umvuql3pepj';
   const utxos = req.body.utxos;
 
   const blockchainProvider = new KoiosProvider("preview");
@@ -42,7 +43,8 @@ export default async function handler(
 
   const assetIdPrefix = "MeshToken";
   // In this starter template, we simply randomly pick one from.
-  let selectedAssetId = Math.floor(Math.random() * 10).toString();
+  // let selectedAssetId = Math.floor(Math.random() * 10).toString();
+  let selectedAssetId = 0;
   const assetMetadata = assetsMetadata[selectedAssetId];
   const assetName = `${assetIdPrefix}${selectedAssetId}`;
 
@@ -61,8 +63,7 @@ export default async function handler(
   const tx = new Transaction({ initiator: appWallet });
   tx.setTxInputs(selectedUtxos);
   tx.mintAsset(forgingScript, asset);
-  tx.sendLovelace(bankWalletAddress, costLovelace);
-  tx.setChangeAddress(recipientAddress);
+  tx.setChangeAddress(bankWalletAddress);
 
   const unsignedTx = await tx.build();
 
