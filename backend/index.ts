@@ -1,4 +1,4 @@
-import type { UTxO } from "@meshsdk/core";
+import type { BrowserWallet, UTxO, Wallet } from "@meshsdk/core";
 import axios from "axios";
 
 const instance = axios.create({
@@ -19,19 +19,22 @@ export async function post(route: string, body = {}) {
 
 export async function createTransaction(
   recipientAddress: string,
-  utxos: UTxO[]
+  utxos: UTxO[],
+  wallet: BrowserWallet,
 ) {
-  return await post(`create-mining-transaction`, { recipientAddress, utxos });
+  return await post(`create-mining-transaction`, { recipientAddress, utxos, wallet });
 }
 
 export async function signTransaction(
   assetName: string,
   signedTx: string,
-  originalMetadata: string
+  originalMetadata: string,
+  wallet: BrowserWallet,
 ) {
   return await post(`sign-transaction`, {
     assetName,
     signedTx,
     originalMetadata,
+    wallet
   });
 }

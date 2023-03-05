@@ -7,7 +7,6 @@ import {
   largestFirst,
 } from "@meshsdk/core";
 import type { Mint } from "@meshsdk/core";
-import { demoMnemonic } from "../../config/wallet";
 import {
   assetsMetadata,
   bankWalletAddress,
@@ -18,30 +17,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // const recipientAddress = req.body.recipientAddress;
-  const recipientAddress = 'addr_test1qqm7a8fjcny59y64yawstsd908lcmgu4g6tm65gvke3qa73ka2gm6amddyamqjt2agngj8s8vhzhf5hm6jsgmw5umvuql3pepj';
+  const recipientAddress = req.body.recipientAddress;
   const utxos = req.body.utxos;
 
   const blockchainProvider = new KoiosProvider("preview");
 
-  const appWallet = new AppWallet({
-    networkId: 0,
-    fetcher: blockchainProvider,
-    submitter: blockchainProvider,
-    key: {
-      type: "mnemonic",
-      words: demoMnemonic,
-    },
-  });
-
-  const appWalletAddress = appWallet.getPaymentAddress();
+  const appWallet = req.body.wallet;
+  const appWalletAddress = bankWalletAddress;
   const forgingScript = ForgeScript.withOneSignature(appWalletAddress);
 
   /**
    * TODO: Here you want to select one of your NFT that has not been minted
    */
 
-  const assetIdPrefix = "MeshToken";
+  const assetIdPrefix = "demo NFT";
   // In this starter template, we simply randomly pick one from.
   // let selectedAssetId = Math.floor(Math.random() * 10).toString();
   let selectedAssetId = 0;
@@ -77,5 +66,5 @@ export default async function handler(
 
   // In this starter template, we send `originalMetadata` to the frontend.
   // Not recommended, its better to save the `originalMetadata` in a database.
-  res.status(200).json({ assetName, maskedTx, originalMetadata });
+  res.status(200).json({ assetName, maskedTx, originalMetadata, appWallet });
 }

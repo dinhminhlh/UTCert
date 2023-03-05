@@ -7,16 +7,17 @@ export default function Home() {
   const { wallet, connected } = useWallet();
   const [txHash, setTxHash] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState(''); // lay gia tri input
 
-  async function startMining() {
+  async function startMining(recipientAddress : string) {
     setLoading(true);
-    try {
-      const recipientAddress = await wallet.getChangeAddress();
-      const utxos = await wallet.getUtxos();
 
+    try {
+      const utxos = await wallet.getUtxos();
       const { assetName, maskedTx, originalMetadata } = await createTransaction(
         recipientAddress,
-        utxos
+        utxos,
+        wallet,
       );
 
       const signedTx = await wallet.signTx(maskedTx, true);
@@ -24,7 +25,8 @@ export default function Home() {
       const { appWalletSignedTx } = await signTransaction(
         assetName,
         signedTx,
-        originalMetadata
+        originalMetadata,
+        wallet
       );
 
       const txHash = await wallet.submitTx(appWalletSignedTx);
@@ -36,6 +38,16 @@ export default function Home() {
     setLoading(false);
   }
 
+  // lay gia tri input
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    const value = inputValue; // Lấy giá trị của phần tử input
+    startMining(value); // Sử dụng giá trị để bắt đầu quá trình khai thác
+  };
+  
   return (
     <div className="container">
       <Head>
@@ -59,13 +71,12 @@ export default function Home() {
 
         <div className="demo">
           {connected ? (
-            <button
-              type="button"
-              onClick={() => startMining()}
-              disabled={loading}
-            >
-              {loading ? "Creating transaction..." : "Mint Mesh Token"}
-            </button>
+            <>
+              <input type="text" value={inputValue} onChange={handleInputChange}/>
+              <button type="button" onClick={handleButtonClick} disabled={loading}>
+                {loading ? "Creating transaction..." : "Mint Mesh Token"}
+              </button>
+            </>
           ) : (
             <CardanoWallet />
           )}
