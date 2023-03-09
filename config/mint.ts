@@ -7,7 +7,7 @@ export const bankWalletAddress = `addr_test1qqdjs73txh7z5g6mafc7xthr67lx2q7gzlp9
 export const assetsMetadata: { [id: string]: AssetMetadata } = {
   "0": {
     name: "UTCert",
-    image: "ipfs://QmQes53Jke7GWotQNo5MCjY5Jway8zX8dLAWueN9nkzBSc",
+    image: "ipfs://QmRzicpReutwCkM6aotuKjErFCUD213DpwPq6ByuzMJaua",
     mediaType: "image/jpg",
     description: "This NFT is UTC",
   },
