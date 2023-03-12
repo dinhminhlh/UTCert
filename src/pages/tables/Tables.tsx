@@ -9,7 +9,7 @@ const Tables = () => {
   return (
     <>
       <div>
-        <h2>Tables</h2>
+        <h2>Creadentials</h2>
       </div>
 
       <View

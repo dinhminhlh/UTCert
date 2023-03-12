@@ -51,17 +51,17 @@ export const appNavs = [
   {
     eventKey: "tables",
     icon: <Icon as={MdOutlineTableChart} />,
-    title: "Tables",
+    title: "Credentials",
     to: "/tables",
     children: [
       {
         eventKey: "basic-table",
-        title: "Basic Table",
+        title: "Issued",
         to: "/tables",
       },
       {
         eventKey: "users",
-        title: "Users Table",
+        title: "Received",
         to: "/users-table",
       },
     ],
@@ -69,17 +69,17 @@ export const appNavs = [
   {
     eventKey: "forms",
     icon: <Icon as={MdModeEditOutline} />,
-    title: "Forms",
+    title: "Contacts",
     to: "/forms",
     children: [
       {
         eventKey: "form-basic",
-        title: "Basic",
+        title: "Add",
         to: "/forms",
       },
       {
         eventKey: "form-wizard",
-        title: "Edit Form",
+        title: "About",
         to: "/edit-form",
       },
     ],

@@ -1,9 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
 import { CardanoWallet, MeshBadge, useWallet } from "@meshsdk/react";
 import { createTransaction, signTransaction } from "../backend";
 import { useState } from "react";
-// import styles from "../styles/styles.module.css";
 
 export default function Home() {
   const { wallet, connected } = useWallet();

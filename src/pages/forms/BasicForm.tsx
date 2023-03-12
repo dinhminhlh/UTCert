@@ -1,5 +1,5 @@
-
 import React, { useState } from "react";
+// import Home from "../forms/index"
 import {
   Button,
   Flex,
@@ -9,7 +9,6 @@ import {
   RadioGroupField,
   TextAreaField,
 } from "@aws-amplify/ui-react";
-
 
 const initialValues = {
   name: "",
@@ -40,6 +39,7 @@ const BasicForm = () => {
 
   return (
     <>
+    {/* <Home></Home> */}
       <Flex as="form" direction="column" width="100%" onSubmit={handleSubmit}>
         <TextField
           value={values.name}
