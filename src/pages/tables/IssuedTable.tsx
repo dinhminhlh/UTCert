@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {
   Table,
   TableCell,
@@ -11,15 +11,9 @@ import {
 import { mockSongsData } from "../../data/mock";
 
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faChevronDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const data = mockSongsData(10);
 
 const IssuedTable = () => {
-  const [credentialType, setCredentialType] = useState('');
-  const [credentialStatus, setCredentialStatus] = useState('');
-  const [contactStatus, setContactStatus] = useState('');
-  const [dateSigned, setDateSigned] = useState('');
   const navigate = useNavigate();
   return (
     <>

@@ -147,22 +147,11 @@ const dataUsers = [
 ];
 
 const Receiveds = () => {
-  const [name, setName] = React.useState('');
-
-  const handleChangeName = (event: SelectChangeEvent) => {
-    setName(event.target.value as string);
-  };
 
   const [dateSigned, setDateSigned] = React.useState('');
 
   const handleChangeDateSigned = (event: SelectChangeEvent) => {
     setDateSigned(event.target.value as string);
-  };
-
-  const [certStatus, setCerStatus] = React.useState('');
-
-  const handleChangeCertStatus = (event: SelectChangeEvent) => {
-    setCerStatus(event.target.value as string);
   };
 
   const [certType, setCertType] = React.useState('');

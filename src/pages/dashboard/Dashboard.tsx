@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faCalendar, 
-  faChevronDown, 
-  faMagnifyingGlass, 
   faAddressCard, 
   faAward,
   faCircleExclamation ,
