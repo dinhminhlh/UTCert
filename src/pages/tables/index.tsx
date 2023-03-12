@@ -1,3 +1,3 @@
-import IssuedTables from "./Tables";
+import IssuedTables from "./Issueds";
 
 export default IssuedTables;

@@ -39,6 +39,7 @@ const ReceivedTable = (props: UsersTableProps) => {
             <TableCell as="th">Classification</TableCell>
             <TableCell as="th">ModeOfStudy</TableCell>
             <TableCell as="th">ReceivedDate</TableCell>
+            <TableCell as="th"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,6 +51,7 @@ const ReceivedTable = (props: UsersTableProps) => {
                 <TableCell>{item.last_name}</TableCell>
                 <TableCell>{item.email}</TableCell>
                 <TableCell>{item.phone}</TableCell>
+                <TableCell>{item.job_title}</TableCell>
                 <TableCell>{item.job_title}</TableCell>
                 <TableCell>{item.job_title}</TableCell>
                 <TableCell>{item.job_title}</TableCell>

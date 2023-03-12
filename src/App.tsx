@@ -9,7 +9,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
 import IssuedTables from "./pages/tables";
-import UsersTable from "./pages/tables/UsersTablePage";
+import UsersTable from "./pages/tables/Receiveds";
 import Contacts from "./pages/forms/Contacts";
 
 export default function App() {

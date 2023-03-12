@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faChevronDown, faMagnifyingGlass, faAddressCard,  faAward } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faCalendar, 
+  faChevronDown, 
+  faMagnifyingGlass, 
+  faAddressCard, 
+  faAward,
+  faCircleExclamation ,
+  faUser,
+  faEye,
+  faDraftingCompass,
+  faSign,
+  faReceipt
+} from '@fortawesome/free-solid-svg-icons';
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -19,24 +31,24 @@ const Dashboard = () => {
         <div className="col-xl-3 col-md-6">
           <div className="card bg-primary mb-4">
             <div className="card-body">
-            <FontAwesomeIcon icon={faAddressCard} />Contacts
+              <FontAwesomeIcon icon={faAddressCard} />Contacts
             </div>
             <div className="card-footer d-flex align-items-center justify-content-between">
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-solid fa-circle-dot"></i>Pending Connection
+                  <FontAwesomeIcon icon={faCircleExclamation} />Pending Connection
                 </div>
                 <div className="number">{pendingConnections}</div>
               </div>
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-solid fa-circle-dot"></i>Connected
+                  <FontAwesomeIcon icon={faUser} />Connected
                 </div>
                 <div className="number">{connected}</div>
               </div>
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-solid fa-circle-dot"></i>View Details
+                  <FontAwesomeIcon icon={faEye} />View Details
                 </div>
                 <div className="number">{viewDetails}</div>
               </div>
@@ -46,24 +58,24 @@ const Dashboard = () => {
         <div className="col-xl-3 col-md-6">
           <div className="card bg-warning mb-4">
             <div className="card-body">
-            <FontAwesomeIcon icon={faAward} />Credentials
+              <FontAwesomeIcon icon={faAward} />Credentials
             </div>
             <div className="card-footer d-flex align-items-center justify-content-between">
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-regular fa-pen-to-square"></i>Draft
+                  <FontAwesomeIcon icon={faDraftingCompass} />Draft
                 </div>
                 <div className="number">{draft}</div>
               </div>
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-solid fa-pencil"></i>Signed
+                  <FontAwesomeIcon icon={faSign} />Signed
                 </div>
                 <div className="number">{signed}</div>
               </div>
               <div className="out-number">
                 <div className="small stretched-link">
-                  <i className="icon fa-solid fa-arrow-left"></i>Received
+                  <FontAwesomeIcon icon={faReceipt} />Received
                 </div>
                 <div className="number">{received}</div>
               </div>

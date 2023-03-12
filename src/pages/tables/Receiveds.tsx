@@ -1,13 +1,12 @@
 import React from "react";
 import { View, Heading, ScrollView } from "@aws-amplify/ui-react";
-import UsersTable from "./UsersTable";
-import IssuedTable from "./IssuedTable";
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
+import ReceivedTable from "./UsersTable";
 
 const dataUsers = [
   {
@@ -147,7 +146,7 @@ const dataUsers = [
   },
 ];
 
-const Tables = () => {
+const Receiveds = () => {
   const [name, setName] = React.useState('');
 
   const handleChangeName = (event: SelectChangeEvent) => {
@@ -225,11 +224,11 @@ const Tables = () => {
         <br></br>
         <ScrollView width="100%">
           <h3>All Information</h3>
-          <UsersTable users={dataUsers} />
+          <ReceivedTable users={dataUsers} />
         </ScrollView>
       </View>
     </>
   );
 };
 
-export default Tables;
+export default Receiveds;

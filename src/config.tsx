@@ -52,7 +52,7 @@ export const appNavs = [
     eventKey: "tables",
     icon: <Icon as={MdOutlineTableChart} />,
     title: "Credentials",
-    to: "/tables",
+    to: "/issued-tables",
     children: [
       {
         eventKey: "basic-table",

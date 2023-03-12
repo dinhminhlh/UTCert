@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
-const IssuedTables = () => {
+const Issueds = () => {
   const [name, setName] = React.useState('');
 
   const handleChangeName = (event: SelectChangeEvent) => {
@@ -38,6 +38,7 @@ const IssuedTables = () => {
     <>
       <div>
         <h2>Issued</h2>
+        <button style={{float: 'right'}}>Add</button>
       </div>
 
       <View
@@ -125,4 +126,4 @@ const IssuedTables = () => {
   );
 };
 
-export default IssuedTables;
+export default Issueds;
