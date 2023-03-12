@@ -1,3 +1,3 @@
-import Tables from "./Tables";
+import IssuedTables from "./Tables";
 
-export default Tables;
+export default IssuedTables;

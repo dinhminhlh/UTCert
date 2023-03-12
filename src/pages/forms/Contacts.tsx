@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Heading, ScrollView } from "@aws-amplify/ui-react";
-import BasicTable from "./IssuedTable";
+import DetailContact from "./DetailContact";
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
 
-const IssuedTables = () => {
+const Contacts = () => {
   const [name, setName] = React.useState('');
 
   const handleChangeName = (event: SelectChangeEvent) => {
@@ -33,11 +33,10 @@ const IssuedTables = () => {
     setContactStatus(event.target.value as string);
   };
 
-
   return (
     <>
       <div>
-        <h2>Issued</h2>
+        <h2>Contacts</h2>
       </div>
 
       <View
@@ -56,61 +55,16 @@ const IssuedTables = () => {
           />
           <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Certificate Type</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={name}
-                label="Certificate Type"
-                onChange={handleChangeName}
-              >
-                <MenuItem value={10}>Education Certificate</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-          <Box sx={{ minWidth: 200 }}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Date Signed</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={dateSigned}
-                label="Date Signed"
-                onChange={handleChangeDateSigned}
-              >
-                <MenuItem value={10}>Sort newest to oldest</MenuItem>
-                <MenuItem value={20}>Sort oldest to newest</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-          <Box sx={{ minWidth: 200 }}>
-            <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Contact Status</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={contactStatus}
                 label="Contact Status"
-                onChange={handleChangeContactStatus}
+                onChange={handleChangeName}
               >
                 <MenuItem value={10}>Pending</MenuItem>
                 <MenuItem value={20}>Connected</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-          <Box sx={{ minWidth: 200 }}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Certificate Status</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={certStatus}
-                label="Certificate Status"
-                onChange={handleChangeCertStatus}
-              >
-                <MenuItem value={10}>Draft</MenuItem>
-                <MenuItem value={20}>Signed</MenuItem>
-                <MenuItem value={30}>Sent</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -118,11 +72,11 @@ const IssuedTables = () => {
         <br></br>
         <ScrollView width="100%">
           <h3>All Information</h3>
-          <BasicTable />
+          <DetailContact />
         </ScrollView>
       </View>
     </>
   );
 };
 
-export default IssuedTables;
+export default Contacts;

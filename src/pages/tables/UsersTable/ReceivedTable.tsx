@@ -6,7 +6,7 @@ import {
   TableHead,
   TableRow,
 } from "@aws-amplify/ui-react";
-import "./UserTable.css";
+import "./ReceivedTable.css";
 
 export interface User {
   id: number;
@@ -22,7 +22,7 @@ export interface UsersTableProps {
   users?: User[];
 }
 
-const UsersTable = (props: UsersTableProps) => {
+const ReceivedTable = (props: UsersTableProps) => {
   const { users } = props;
 
   return (
@@ -30,22 +30,28 @@ const UsersTable = (props: UsersTableProps) => {
       <Table caption="" highlightOnHover={false}>
         <TableHead>
           <TableRow>
-            <TableCell as="th">first_name</TableCell>
-            <TableCell as="th">last_name</TableCell>
-            <TableCell as="th">email</TableCell>
-            <TableCell as="th">phone</TableCell>
-            <TableCell as="th">job_title</TableCell>
-            <TableCell as="th">img</TableCell>
+            <TableCell as="th"></TableCell>
+            <TableCell as="th">Certificate Code</TableCell>
+            <TableCell as="th">Certificate Type</TableCell>
+            <TableCell as="th">Organization Name</TableCell>
+            <TableCell as="th">Certificate Name</TableCell>
+            <TableCell as="th">Year Of Graduation</TableCell>
+            <TableCell as="th">Classification</TableCell>
+            <TableCell as="th">ModeOfStudy</TableCell>
+            <TableCell as="th">ReceivedDate</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {users?.map((item) => {
             return (
               <TableRow key={item.id}>
+                <TableCell><input type="checkbox"/></TableCell>
                 <TableCell>{item.first_name}</TableCell>
                 <TableCell>{item.last_name}</TableCell>
                 <TableCell>{item.email}</TableCell>
                 <TableCell>{item.phone}</TableCell>
+                <TableCell>{item.job_title}</TableCell>
+                <TableCell>{item.job_title}</TableCell>
                 <TableCell>{item.job_title}</TableCell>
                 <TableCell>
                   <img
@@ -63,4 +69,4 @@ const UsersTable = (props: UsersTableProps) => {
   );
 };
 
-export default UsersTable;
+export default ReceivedTable;

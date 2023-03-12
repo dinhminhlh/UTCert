@@ -1,3 +1,3 @@
-import Forms from "./Forms";
+import Contacts from "./Contacts";
 
-export default Forms;
+export default Contacts;

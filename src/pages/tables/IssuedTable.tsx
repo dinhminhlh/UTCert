@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faChevronDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const data = mockSongsData(10);
 
-const BasicTable = () => {
+const IssuedTable = () => {
   const [credentialType, setCredentialType] = useState('');
   const [credentialStatus, setCredentialStatus] = useState('');
   const [contactStatus, setContactStatus] = useState('');
@@ -27,9 +27,9 @@ const BasicTable = () => {
         <TableHead>
           <TableRow>
           <TableCell as="th"></TableCell>
-            <TableCell as="th">Code</TableCell>
-            <TableCell as="th">Type</TableCell>
-            <TableCell as="th">Name</TableCell>
+            <TableCell as="th">Certificate Code</TableCell>
+            <TableCell as="th">Certificate Type</TableCell>
+            <TableCell as="th">Received Name</TableCell>
             <TableCell as="th">Date Signed</TableCell>
             <TableCell as="th">Contact Status</TableCell>
             <TableCell as="th">Certificate Status</TableCell>
@@ -40,9 +40,9 @@ const BasicTable = () => {
           {data?.map((item) => {
             return (
               <TableRow key={item._id}>
+                <TableCell><input type="checkbox"/></TableCell>
                 <TableCell>{item.name}</TableCell>
                 <TableCell>{item.description}</TableCell>
-                <TableCell>{item.genre}</TableCell>
                 <TableCell>{item.genre}</TableCell>
                 <TableCell>{item.genre}</TableCell>
                 <TableCell>{item.genre}</TableCell>
@@ -58,4 +58,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default IssuedTable;

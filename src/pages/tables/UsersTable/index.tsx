@@ -1,3 +1,3 @@
-import UsersTable from "./UsersTable";
+import ReceivedTable from "./ReceivedTable";
 
-export default UsersTable;
+export default ReceivedTable;

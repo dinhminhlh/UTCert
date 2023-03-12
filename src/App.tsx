@@ -8,10 +8,9 @@ import theme from "./theme";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
-import Tables from "./pages/tables";
+import IssuedTables from "./pages/tables";
 import UsersTable from "./pages/tables/UsersTablePage";
-import Forms from "./pages/forms";
-import EditForm from "./pages/forms/EditForm";
+import Contacts from "./pages/forms/Contacts";
 
 export default function App() {
   return (
@@ -23,10 +22,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="forms" element={<Forms />} />
-            <Route path="edit-form" element={<EditForm />} />
-            <Route path="tables" element={<Tables />} />
-            <Route path="users-table" element={<UsersTable />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="issued-tables" element={<IssuedTables />} />
+            <Route path="received-table" element={<UsersTable />} />
             <Route path="profile" element={<Profile />} />
 
             {/* Using path="*"" means "match anything", so this route
