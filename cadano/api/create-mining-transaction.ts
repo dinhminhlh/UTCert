@@ -11,7 +11,7 @@ import {
   assetsMetadata,
   bankWalletAddress,
   costLovelace,
-} from "../../config/mint";
+} from "../config/mint";
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,8 +1,8 @@
 import { CardanoWallet, MeshBadge, useWallet } from "@meshsdk/react";
-import { createTransaction, signTransaction } from "../backend";
+import { createTransaction, signTransaction } from "../../cadano/backend";
 import { useState } from "react";
 
-export default function Home() {
+function Home() {
   const { wallet, connected } = useWallet();
   const [txHash, setTxHash] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -69,3 +69,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

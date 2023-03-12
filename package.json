@@ -6,7 +6,7 @@
   "author": "MeshJS",
   "license": "Apache-2.0",
   "scripts": {
-    "start": "react-scripts start --src-dir=./src -- --rootDir=./src",
+    "start": "react-scripts start",
     "lint": "next lint",
     "dev": "react-scripts start",
     "build": "react-scripts build",

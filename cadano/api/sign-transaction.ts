@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { AppWallet, Transaction, KoiosProvider } from "@meshsdk/core";
-import { demoMnemonic } from "../../config/wallet";
+import { demoMnemonic } from "../config/wallet";
 
 export default async function handler(
   req: NextApiRequest,
