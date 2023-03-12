@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Heading, ScrollView } from "@aws-amplify/ui-react";
 import BasicTable from "./IssuedTable";
 import Box from '@mui/material/Box';
@@ -33,12 +33,11 @@ const Issueds = () => {
     setContactStatus(event.target.value as string);
   };
 
-
   return (
     <>
       <div>
         <h2>Issued</h2>
-        <button style={{float: 'right'}}>Add</button>
+        <button style={{ float: 'right' }}>Add</button>
       </div>
 
       <View
