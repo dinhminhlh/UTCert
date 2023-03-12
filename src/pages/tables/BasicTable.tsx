@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Table,
   TableCell,
@@ -11,20 +11,28 @@ import {
 import { mockSongsData } from "../../data/mock";
 
 import { useNavigate } from "react-router-dom";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faChevronDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const data = mockSongsData(10);
 
 const BasicTable = () => {
+  const [credentialType, setCredentialType] = useState('');
+  const [credentialStatus, setCredentialStatus] = useState('');
+  const [contactStatus, setContactStatus] = useState('');
+  const [dateSigned, setDateSigned] = useState('');
   const navigate = useNavigate();
   return (
     <>
       <Table caption="" highlightOnHover={false}>
         <TableHead>
           <TableRow>
-            <TableCell as="th">Title</TableCell>
-            <TableCell as="th">Description</TableCell>
-            <TableCell as="th">Category</TableCell>
-            <TableCell as="th"></TableCell>
+          <TableCell as="th"></TableCell>
+            <TableCell as="th">Code</TableCell>
+            <TableCell as="th">Type</TableCell>
+            <TableCell as="th">Name</TableCell>
+            <TableCell as="th">Date Signed</TableCell>
+            <TableCell as="th">Contact Status</TableCell>
+            <TableCell as="th">Certificate Status</TableCell>
           </TableRow>
         </TableHead>
 
@@ -34,6 +42,9 @@ const BasicTable = () => {
               <TableRow key={item._id}>
                 <TableCell>{item.name}</TableCell>
                 <TableCell>{item.description}</TableCell>
+                <TableCell>{item.genre}</TableCell>
+                <TableCell>{item.genre}</TableCell>
+                <TableCell>{item.genre}</TableCell>
                 <TableCell>{item.genre}</TableCell>
                 <TableCell>
                   <Button onClick={() => navigate("/edit-form")}>Edit</Button>

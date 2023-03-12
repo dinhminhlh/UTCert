@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faChevronDown, faMagnifyingGlass, faAddressCard,  faAward } from '@fortawesome/free-solid-svg-icons';
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -17,7 +19,7 @@ const Dashboard = () => {
         <div className="col-xl-3 col-md-6">
           <div className="card bg-primary mb-4">
             <div className="card-body">
-              <i className="icon fa-regular fa-id-card"></i>Contacts
+            <FontAwesomeIcon icon={faAddressCard} />Contacts
             </div>
             <div className="card-footer d-flex align-items-center justify-content-between">
               <div className="out-number">
@@ -44,7 +46,7 @@ const Dashboard = () => {
         <div className="col-xl-3 col-md-6">
           <div className="card bg-warning mb-4">
             <div className="card-body">
-              <i className="icon fa-solid fa-certificate"></i>Credentials
+            <FontAwesomeIcon icon={faAward} />Credentials
             </div>
             <div className="card-footer d-flex align-items-center justify-content-between">
               <div className="out-number">

@@ -14,14 +14,14 @@ export const baseConfig = {
   titleSuffix: "",
   search: true,
   header: true,
-  headerText: "Logo",
+  headerText: "UTCert",
   footer: true,
   footerText: (
     <>
       <span>
-        © MIT {new Date().getFullYear()}, Made with ❤️ by {""}
+        © UTC {new Date().getFullYear()}, Made with ❤️ by {""}
         <a href="https://github.com/mrtzdev" target="_blank" rel="noreferrer">
-          Mrtzdev
+          Nhom 4
         </a>
       </span>
     </>
