@@ -4,7 +4,7 @@ import "@aws-amplify/ui-react/styles.css";
 import "./App.css";
 import { ThemeProvider } from "@aws-amplify/ui-react";
 import theme from "./theme";
-
+import Login from "./pages/login";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
@@ -20,6 +20,7 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
         <Routes>
+          <Route path="login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="contacts" element={<Contacts />} />
